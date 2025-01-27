@@ -7,8 +7,6 @@ const creator = (parametr) => {
     }
 
     for (const key in parametr.attributes) {
-        console.log(key);
-        console.log(parametr.attributes[key]);
         element.setAttribute(key, parametr.attributes[key]);
     }
 

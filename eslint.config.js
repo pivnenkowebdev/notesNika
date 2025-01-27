@@ -13,9 +13,4 @@ export default [
         files: ['src/**/*.js'],
         ignores: ['**/*.config.js', 'dist'],
     },
-    {
-        rules: {
-            'no-unused-vars': 'error',
-        },
-    },
 ];
