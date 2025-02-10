@@ -37,7 +37,7 @@ const fadeParams = {
 const headerFormParams = {
     tagName: 'header',
     text: '',
-    classList: ['flex', 'gap-2', 'max-w-96', 'w-full', 'items-center'],
+    classList: ['flex', 'gap-2', 'max-w-96', 'w-full', 'items-center', 'mb-4'],
     attributes: {},
 };
 
@@ -73,6 +73,22 @@ const fakeCheckboxParams = {
     attributes: {},
 };
 
+const textAreaParams = {
+    tagName: 'textarea',
+    text: '',
+    classList: [
+        'min-h-48',
+        'max-h-96',
+        'resize-y',
+        'w-full',
+        'textarea',
+        'outline-none',
+    ],
+    attributes: {
+        placeholder: 'Введите текст',
+    },
+};
+
 export {
     formParams,
     fadeParams,
@@ -81,4 +97,5 @@ export {
     labelParams,
     checkboxParams,
     fakeCheckboxParams,
+    textAreaParams,
 };

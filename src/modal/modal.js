@@ -6,6 +6,7 @@ import {
     formParams,
     headerFormParams,
     labelParams,
+    textAreaParams,
     textInputParams,
 } from './modal-params.js';
 
@@ -16,6 +17,7 @@ const showForm = () => {
     const formElem = creator(formParams);
     const headerFormElem = creator(headerFormParams);
     const textInputElem = creator(textInputParams);
+    const textAreaElem = creator(textAreaParams);
 
     const labelElem = creator(labelParams);
     const checkboxElem = creator(checkboxParams);
@@ -28,6 +30,7 @@ const showForm = () => {
     labelElem.append(checkboxElem);
     labelElem.append(fakeCheckboxElem);
     headerFormElem.append(labelElem);
+    formElem.append(textAreaElem);
 };
 
 export { showForm };
