@@ -37,8 +37,48 @@ const fadeParams = {
 const headerFormParams = {
     tagName: 'header',
     text: '',
-    classList: ['flex', 'gap-2', 'max-w-96', 'w-full'],
+    classList: ['flex', 'gap-2', 'max-w-96', 'w-full', 'items-center'],
     attributes: {},
 };
 
-export { formParams, fadeParams, headerFormParams };
+const textInputParams = {
+    tagName: 'input',
+    text: '',
+    classList: ['text-black', 'text-2xl', 'font-medium', 'outline-none'],
+    attributes: {
+        placeholder: 'Введите заголовок',
+    },
+};
+
+const labelParams = {
+    tagName: 'label',
+    text: '',
+    classList: [],
+    attributes: {},
+};
+
+const checkboxParams = {
+    tagName: 'input',
+    text: '',
+    classList: ['real-checkbox'],
+    attributes: {
+        type: 'checkbox',
+    },
+};
+
+const fakeCheckboxParams = {
+    tagName: 'span',
+    text: '',
+    classList: ['fake-checkbox'],
+    attributes: {},
+};
+
+export {
+    formParams,
+    fadeParams,
+    headerFormParams,
+    textInputParams,
+    labelParams,
+    checkboxParams,
+    fakeCheckboxParams,
+};
