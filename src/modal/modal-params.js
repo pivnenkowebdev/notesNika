@@ -37,7 +37,16 @@ const fadeParams = {
 const headerFormParams = {
     tagName: 'header',
     text: '',
-    classList: ['flex', 'gap-2', 'max-w-96', 'w-full', 'items-center', 'mb-4'],
+    classList: [
+        'flex',
+        'gap-2',
+        'max-w-[350px]',
+        'w-full',
+        'items-center',
+        'mb-4',
+        'border-b-2',
+        'border-cyan-600',
+    ],
     attributes: {},
 };
 
@@ -83,10 +92,32 @@ const textAreaParams = {
         'w-full',
         'textarea',
         'outline-none',
+        'mb-4',
     ],
     attributes: {
         placeholder: 'Введите текст',
     },
+};
+
+const btnContainerParams = {
+    tagName: 'div',
+    text: '',
+    classList: ['gap-4', 'flex', 'justify-end'],
+    attributes: {},
+};
+
+const canselBtnParams = {
+    tagName: 'button',
+    text: 'Cancel',
+    classList: ['bg-rose-500', 'rounded-lg', 'w-24', 'h-8', 'text-white'],
+    attributes: {},
+};
+
+const addBtnParams = {
+    tagName: 'button',
+    text: 'Add',
+    classList: ['bg-cyan-600', 'rounded-lg', 'w-24', 'h-8', 'text-white'],
+    attributes: {},
 };
 
 export {
@@ -98,4 +129,7 @@ export {
     checkboxParams,
     fakeCheckboxParams,
     textAreaParams,
+    addBtnParams,
+    canselBtnParams,
+    btnContainerParams,
 };

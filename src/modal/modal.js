@@ -1,5 +1,8 @@
 import creator from '../main-helpers/creator.js';
 import {
+    addBtnParams,
+    btnContainerParams,
+    canselBtnParams,
     checkboxParams,
     fadeParams,
     fakeCheckboxParams,
@@ -18,6 +21,9 @@ const showForm = () => {
     const headerFormElem = creator(headerFormParams);
     const textInputElem = creator(textInputParams);
     const textAreaElem = creator(textAreaParams);
+    const btnContainerElem = creator(btnContainerParams);
+    const canselBtnElem = creator(canselBtnParams);
+    const addBtnElem = creator(addBtnParams);
 
     const labelElem = creator(labelParams);
     const checkboxElem = creator(checkboxParams);
@@ -31,6 +37,9 @@ const showForm = () => {
     labelElem.append(fakeCheckboxElem);
     headerFormElem.append(labelElem);
     formElem.append(textAreaElem);
+    formElem.append(btnContainerElem);
+    btnContainerElem.append(canselBtnElem);
+    btnContainerElem.append(addBtnElem);
 };
 
 export { showForm };
