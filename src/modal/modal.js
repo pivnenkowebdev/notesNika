@@ -40,6 +40,14 @@ const showForm = () => {
     formElem.append(btnContainerElem);
     btnContainerElem.append(canselBtnElem);
     btnContainerElem.append(addBtnElem);
+
+    formElem.addEventListener('submit', (event) => formHandler(event));
+};
+
+const formHandler = (event) => {
+    event.preventDefault();
+    const dataFromForm = new FormData(event.target);
+    console.log(dataFromForm);
 };
 
 export { showForm };
