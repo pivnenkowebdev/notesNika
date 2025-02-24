@@ -56,6 +56,7 @@ const textInputParams = {
     classList: ['text-black', 'text-2xl', 'font-medium', 'outline-none'],
     attributes: {
         placeholder: 'Введите заголовок',
+        name: 'title',
     },
 };
 
@@ -72,6 +73,7 @@ const checkboxParams = {
     classList: ['real-checkbox'],
     attributes: {
         type: 'checkbox',
+        name: 'checkbox',
     },
 };
 
@@ -96,6 +98,7 @@ const textAreaParams = {
     ],
     attributes: {
         placeholder: 'Введите текст',
+        name: 'textarea',
     },
 };
 

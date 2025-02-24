@@ -31,5 +31,16 @@ const initData = () => {
     }
 };
 
+const dataHandler = (dataFromForm) => {
+    console.log(dataFromForm);
+    const newNote = {
+        title: dataFromForm.get('title'),
+        checkbox: dataFromForm.get('checkbox'),
+        textarea: dataFromForm.get('textarea'),
+    };
+    console.log(newNote);
+};
+
 const allNotes = initData();
 console.log(allNotes);
+export { dataHandler };

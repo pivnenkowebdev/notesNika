@@ -1,4 +1,5 @@
 import creator from '../main-helpers/creator.js';
+import { dataHandler } from '../main-helpers/data-handler.js';
 import {
     addBtnParams,
     btnContainerParams,
@@ -47,7 +48,7 @@ const showForm = () => {
 const formHandler = (event) => {
     event.preventDefault();
     const dataFromForm = new FormData(event.target);
-    console.log(dataFromForm);
+    dataHandler(dataFromForm);
 };
 
 export { showForm };
