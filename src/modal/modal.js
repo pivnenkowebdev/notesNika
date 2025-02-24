@@ -15,40 +15,54 @@ import {
 } from './modal-params.js';
 
 const showForm = () => {
-    const appContainer = document.body;
+    const isForm = document.querySelector('#form');
 
-    const fadeElem = creator(fadeParams);
-    const formElem = creator(formParams);
-    const headerFormElem = creator(headerFormParams);
-    const textInputElem = creator(textInputParams);
-    const textAreaElem = creator(textAreaParams);
-    const btnContainerElem = creator(btnContainerParams);
-    const canselBtnElem = creator(canselBtnParams);
-    const addBtnElem = creator(addBtnParams);
+    if (!isForm) {
+        const appContainer = document.body;
 
-    const labelElem = creator(labelParams);
-    const checkboxElem = creator(checkboxParams);
-    const fakeCheckboxElem = creator(fakeCheckboxParams);
+        const fadeElem = creator(fadeParams);
+        const formElem = creator(formParams);
+        const headerFormElem = creator(headerFormParams);
+        const textInputElem = creator(textInputParams);
+        const textAreaElem = creator(textAreaParams);
+        const btnContainerElem = creator(btnContainerParams);
+        const canselBtnElem = creator(canselBtnParams);
+        const addBtnElem = creator(addBtnParams);
 
-    appContainer.append(fadeElem);
-    appContainer.append(formElem);
-    formElem.append(headerFormElem);
-    headerFormElem.append(textInputElem);
-    labelElem.append(checkboxElem);
-    labelElem.append(fakeCheckboxElem);
-    headerFormElem.append(labelElem);
-    formElem.append(textAreaElem);
-    formElem.append(btnContainerElem);
-    btnContainerElem.append(canselBtnElem);
-    btnContainerElem.append(addBtnElem);
+        const labelElem = creator(labelParams);
+        const checkboxElem = creator(checkboxParams);
+        const fakeCheckboxElem = creator(fakeCheckboxParams);
 
-    formElem.addEventListener('submit', (event) => formHandler(event));
+        appContainer.append(fadeElem);
+        appContainer.append(formElem);
+        formElem.append(headerFormElem);
+        headerFormElem.append(textInputElem);
+        labelElem.append(checkboxElem);
+        labelElem.append(fakeCheckboxElem);
+        headerFormElem.append(labelElem);
+        formElem.append(textAreaElem);
+        formElem.append(btnContainerElem);
+        btnContainerElem.append(canselBtnElem);
+        btnContainerElem.append(addBtnElem);
+
+        textInputElem.focus();
+
+        formElem.addEventListener('submit', (event) => {
+            formHandler(event);
+            deleteElem(formElem);
+            deleteElem(fadeElem);
+        });
+    }
 };
 
 const formHandler = (event) => {
     event.preventDefault();
     const dataFromForm = new FormData(event.target);
     dataHandler(dataFromForm);
+};
+
+const deleteElem = (element) => {
+    element.remove();
 };
 
 export { showForm };

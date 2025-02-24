@@ -1,7 +1,7 @@
 const addBtnParams = {
     tagName: 'button',
     text: '',
-    classList: ['flex', 'items-center', 'gap-2'],
+    classList: ['flex', 'items-center', 'gap-2', 'outline-none'],
     attributes: {},
 };
 

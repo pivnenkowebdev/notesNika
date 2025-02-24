@@ -14,7 +14,9 @@ const formParams = {
         'translate-y-[-50%]',
         'rounded-xl',
     ],
-    attributes: {},
+    attributes: {
+        id: 'form',
+    },
 };
 
 const fadeParams = {
