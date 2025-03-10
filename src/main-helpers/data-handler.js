@@ -32,15 +32,22 @@ const initData = () => {
 };
 
 const dataHandler = (dataFromForm) => {
-    console.log(dataFromForm);
     const newNote = {
         title: dataFromForm.get('title'),
         checkbox: dataFromForm.get('checkbox'),
         textarea: dataFromForm.get('textarea'),
     };
-    console.log(newNote);
+    dataToArray(newNote);
+    dataToLocalStorage(keyLocal, dataToJSON(allNotes));
+};
+
+const dataToArray = (objectNote) => {
+    objectNote.checkbox
+        ? allNotes.favorite.push(objectNote)
+        : allNotes.regular.push(objectNote);
 };
 
 const allNotes = initData();
-console.log(allNotes);
 export { dataHandler };
+// создать рендер заметок
+// для удаления заметок создать для них id
