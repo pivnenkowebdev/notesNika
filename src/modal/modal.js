@@ -1,5 +1,6 @@
 import creator from '../main-helpers/creator.js';
-import { dataHandler } from '../main-helpers/data-handler.js';
+import { allNotes, dataHandler } from '../main-helpers/data-handler.js';
+import displayNotes from '../notes/notes.js';
 import {
     addBtnParams,
     btnContainerParams,
@@ -59,6 +60,7 @@ const formHandler = (event) => {
     event.preventDefault();
     const dataFromForm = new FormData(event.target);
     dataHandler(dataFromForm);
+    displayNotes(allNotes.favorite);
 };
 
 const deleteElem = (element) => {

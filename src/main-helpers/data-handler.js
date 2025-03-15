@@ -48,6 +48,7 @@ const dataToArray = (objectNote) => {
 };
 
 const allNotes = initData();
-export { dataHandler };
+
+export { dataHandler, allNotes };
 // создать рендер заметок
 // для удаления заметок создать для них id
