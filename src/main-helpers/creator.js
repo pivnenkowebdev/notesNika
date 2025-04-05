@@ -1,6 +1,9 @@
 const creator = (parametr) => {
     const element = document.createElement(parametr.tagName);
-    element.innerText = parametr.text;
+
+    if (parametr.text) {
+        element.innerText = parametr.text;
+    }
 
     if (parametr.classList) {
         element.classList.add(...parametr.classList);
