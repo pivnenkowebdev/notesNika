@@ -60,6 +60,7 @@ const formHandler = (event) => {
     event.preventDefault();
     const dataFromForm = new FormData(event.target);
     dataHandler(dataFromForm);
+
     clearNotes();
     displayNotes(allNotes.favorite);
     displayNotes(allNotes.regular);

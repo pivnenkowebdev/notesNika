@@ -30,8 +30,6 @@ const displayNotes = (arrayNotes) => {
     }
 
     arrayNotes.forEach((note) => {
-        console.log(note);
-
         const noteContainer = creator(noteContainerParams);
         const noteHeader = creator(noteHeaderParams);
 
@@ -44,7 +42,7 @@ const displayNotes = (arrayNotes) => {
 
         const wrapperDateAndButton = creator(wrapperDateAndButtonParams);
         const date = creator(dateParams);
-        date.innerText = 'Changed 28.03.2025 at 22:32';
+        date.innerText = `Created ${note.date.currentDate} at ${note.date.currentTime}`;
         const buttonsContainer = creator(buttonsContainerParams);
         let favoriteButton = note.checkbox
             ? creator(favoriteButtonGoldParams)

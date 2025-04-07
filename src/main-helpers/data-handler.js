@@ -36,15 +36,27 @@ const dataHandler = (dataFromForm) => {
         title: dataFromForm.get('title'),
         checkbox: dataFromForm.get('checkbox'),
         textarea: dataFromForm.get('textarea'),
+        date: setDate(),
     };
     dataToArray(newNote);
     dataToLocalStorage(keyLocal, dataToJSON(allNotes));
+    console.log(newNote);
 };
 
 const dataToArray = (objectNote) => {
     objectNote.checkbox
         ? allNotes.favorite.push(objectNote)
         : allNotes.regular.push(objectNote);
+};
+
+const setDate = () => {
+    const todayDate = new Date();
+    const currentTime = todayDate.toLocaleTimeString('ru-RU', {
+        hour: '2-digit',
+        minute: '2-digit',
+    });
+    const currentDate = todayDate.toLocaleDateString('ru-RU');
+    return { currentTime, currentDate };
 };
 
 const allNotes = initData();
