@@ -23,6 +23,7 @@ const clearNotes = () => {
 
 const displayNotes = (arrayNotes) => {
     let listNotesElement = document.querySelector('#list');
+    const template = document.createDocumentFragment();
     if (!listNotesElement) {
         const appContainer = document.body;
         listNotesElement = creator(listParams);
@@ -68,12 +69,12 @@ const displayNotes = (arrayNotes) => {
         buttonsContainer.append(removeButton);
         noteContainer.append(noteText);
 
-        listNotesElement.append(noteContainer);
+        template.append(noteContainer);
     });
+    listNotesElement.append(template);
 };
 
 export { displayNotes, clearNotes };
 
 //  1 отформатировать код в этом файле (html template)
-// 2 создать дату
 //  3 сделать функцию удаления
