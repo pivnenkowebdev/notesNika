@@ -37,10 +37,10 @@ const dataHandler = (dataFromForm) => {
         checkbox: dataFromForm.get('checkbox'),
         textarea: dataFromForm.get('textarea'),
         date: setDate(),
+        id: setID(dataFromForm.get('checkbox')),
     };
     dataToArray(newNote);
     dataToLocalStorage(keyLocal, dataToJSON(allNotes));
-    console.log(newNote);
 };
 
 const dataToArray = (objectNote) => {
@@ -59,8 +59,17 @@ const setDate = () => {
     return { currentTime, currentDate };
 };
 
-const allNotes = initData();
+const setID = (statusNote) => {
+    let newID = null;
+    if (statusNote) {
+        newID = allNotes.favorite.length + 'favorite';
+    } else {
+        newID = allNotes.regular.length + 'regular';
+    }
+    return newID;
+};
 
+const allNotes = initData();
 export { dataHandler, allNotes };
-// создать рендер заметок
+
 // для удаления заметок создать для них id
