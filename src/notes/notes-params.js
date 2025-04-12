@@ -19,7 +19,9 @@ const noteContainerParams = {
     tagName: 'li',
     text: '',
     classList: ['border-2', 'border-cyan-600', 'rounded-md', 'px-3', 'py-2'],
-    attributes: {},
+    attributes: {
+        'data-item': '',
+    },
 };
 
 const noteHeaderParams = {
@@ -96,7 +98,9 @@ const removeButtonParams = {
         'bg-no-repeat',
         'bg-center',
     ],
-    attributes: {},
+    attributes: {
+        'data-action': 'remove',
+    },
 };
 
 const noteTextParams = {

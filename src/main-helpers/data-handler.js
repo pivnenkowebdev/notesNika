@@ -71,5 +71,3 @@ const setID = (statusNote) => {
 
 const allNotes = initData();
 export { dataHandler, allNotes };
-
-// для удаления заметок создать для них id

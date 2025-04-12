@@ -28,9 +28,13 @@ const displayNotes = (arrayNotes) => {
         const appContainer = document.body;
         listNotesElement = creator(listParams);
         appContainer.append(listNotesElement);
+        listNotesElement.addEventListener('click', (event) =>
+            eventDispatchNote(event)
+        );
     }
 
     arrayNotes.forEach((note) => {
+        noteContainerParams.attributes.id = note.id;
         const noteContainer = creator(noteContainerParams);
         const noteHeader = creator(noteHeaderParams);
 
@@ -74,7 +78,17 @@ const displayNotes = (arrayNotes) => {
     listNotesElement.append(template);
 };
 
-export { displayNotes, clearNotes };
+const eventDispatchNote = (event) => {
+    const actionBtn = event.target.closest('[data-action]');
+    const currentAction = actionBtn.dataset.action;
+    switch (currentAction) {
+        case 'remove':
+            console.log(1);
+            break;
 
-//  1 отформатировать код в этом файле (html template)
-//  3 сделать функцию удаления
+        default:
+            break;
+    }
+};
+
+export { displayNotes, clearNotes };
