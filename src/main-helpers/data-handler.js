@@ -69,5 +69,28 @@ const setID = (statusNote) => {
     return newID;
 };
 
+const decreaseId = (index, array, title) => {
+    for (let i = index; i < array.length; i++) {
+        array[i].id = parseInt(array[i].id) - 1 + title;
+    }
+};
+
+const deleteNote = (id) => {
+    if (id) {
+        const isFavoriteId = id.endsWith('favorite');
+
+        const [currentArray, arrayTitle] = isFavoriteId
+            ? [allNotes.favorite, 'favorite']
+            : [allNotes.regular, 'regular'];
+
+        const currentIndex = currentArray.findIndex((note) => note.id === id);
+        currentArray.splice(currentIndex, 1);
+        decreaseId(currentIndex, currentArray, arrayTitle);
+        dataToLocalStorage(keyLocal, dataToJSON(allNotes));
+    }
+};
+
 const allNotes = initData();
-export { dataHandler, allNotes };
+export { dataHandler, allNotes, deleteNote };
+
+// начать делать изм заметки

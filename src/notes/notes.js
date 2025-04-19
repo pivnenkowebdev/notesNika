@@ -1,4 +1,5 @@
 import creator from '../main-helpers/creator.js';
+import { deleteNote, allNotes } from '../main-helpers/data-handler.js';
 import {
     buttonsContainerParams,
     dateParams,
@@ -80,10 +81,20 @@ const displayNotes = (arrayNotes) => {
 
 const eventDispatchNote = (event) => {
     const actionBtn = event.target.closest('[data-action]');
-    const currentAction = actionBtn.dataset.action;
+    let currentAction = null;
+    let currentId = null;
+
+    if (actionBtn) {
+        currentId = actionBtn.closest('[data-item]').id;
+        currentAction = actionBtn.dataset.action;
+    }
+
     switch (currentAction) {
         case 'remove':
-            console.log(1);
+            deleteNote(currentId);
+            clearNotes();
+            displayNotes(allNotes.favorite);
+            displayNotes(allNotes.regular);
             break;
 
         default:

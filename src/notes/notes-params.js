@@ -50,7 +50,7 @@ const favoriteButtonParams = {
     text: '',
     classList: [
         "bg-[url('/star-btn.svg')]",
-        "dark:bg-[url('/moon.svg')]",
+        "dark:bg-[url('/star-btn-night.svg')]",
         'w-6',
         'h-6',
         'bg-no-repeat',
@@ -64,7 +64,7 @@ const favoriteButtonGoldParams = {
     text: '',
     classList: [
         "bg-[url('/star-btn-gold.svg')]",
-        "dark:bg-[url('/moon.svg')]",
+        "dark:bg-[url('/star-btn-gold.svg')]",
         'w-6',
         'h-6',
         'bg-no-repeat',
@@ -78,7 +78,7 @@ const editButtonParams = {
     text: '',
     classList: [
         "bg-[url('/edit-btn.svg')]",
-        "dark:bg-[url('/moon.svg')]",
+        "dark:bg-[url('/edit-btn-night.svg')]",
         'w-6',
         'h-6',
         'bg-no-repeat',
@@ -92,7 +92,7 @@ const removeButtonParams = {
     text: '',
     classList: [
         "bg-[url('/trash-btn.svg')]",
-        "dark:bg-[url('/moon.svg')]",
+        "dark:bg-[url('/trash-btn-night.svg')]",
         'w-6',
         'h-6',
         'bg-no-repeat',
