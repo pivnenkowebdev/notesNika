@@ -150,7 +150,10 @@ const canselBtnParams = {
         'dark:bg-rose-800',
         'duration-300',
     ],
-    attributes: {},
+    attributes: {
+        type: 'reset',
+        'data-reset': '',
+    },
 };
 
 const addBtnParams = {

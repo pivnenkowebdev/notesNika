@@ -53,6 +53,18 @@ const showForm = () => {
             deleteElem(formElem);
             deleteElem(fadeElem);
         });
+        formElem.addEventListener('click', (event) =>
+            remove(event, formElem, fadeElem)
+        );
+    }
+};
+
+const remove = (event, formElem, fadeElem) => {
+    const isCancelBtn = event.target.closest('[data-reset]');
+    console.log(formElem, fadeElem);
+    if (isCancelBtn) {
+        deleteElem(formElem);
+        deleteElem(fadeElem);
     }
 };
 
