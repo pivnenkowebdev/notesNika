@@ -5,6 +5,7 @@ const headerParams = {
         'border-b-2',
         'border-cyan-600',
         'dark:border-white',
+        'duration-300',
         'py-4',
         'px-2',
         'max-w-7xl',
@@ -19,7 +20,13 @@ const headerParams = {
 const titleParams = {
     tagName: 'h1',
     text: 'To-Do',
-    classList: ['text-cyan-600', 'text-3xl', 'font-medium', 'dark:text-white'],
+    classList: [
+        'text-cyan-600',
+        'text-3xl',
+        'font-medium',
+        'dark:text-white',
+        'duration-300',
+    ],
     attributes: {},
 };
 
@@ -35,6 +42,7 @@ const btnNightModeParams = {
         'flex',
         'justify-center',
         'items-center',
+        'duration-300',
     ],
     attributes: {},
 };
@@ -50,6 +58,7 @@ const imgParams = {
         'bg-center',
         "bg-[url('/sun-icon.svg')]",
         "dark:bg-[url('/moon.svg')]",
+        'duration-300',
     ],
 };
 

@@ -17,14 +17,14 @@ body {
 }
 
 .fake-checkbox {
-    width: 20px;
+    /* width: 20px;
     height: 20px;
     display: block;
     background-image: url(../star-btn.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    cursor: pointer;
+    cursor: pointer; */
 }
 
 .real-checkbox:checked + .fake-checkbox {

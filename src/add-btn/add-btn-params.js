@@ -8,7 +8,13 @@ const addBtnParams = {
 const textBtnParams = {
     tagName: 'span',
     text: 'Add note',
-    classList: ['text-2xl', 'font-medium', 'text-cyan-600', 'dark:text-white'],
+    classList: [
+        'text-2xl',
+        'font-medium',
+        'text-cyan-600',
+        'dark:text-white',
+        'duration-300',
+    ],
     attributes: {},
 };
 
@@ -24,6 +30,7 @@ const iconParams = {
         'bg-contain',
         "bg-[url('/btn-add-icon.svg')]",
         "dark:bg-[url('/btn-add-icon-night.svg')]",
+        'duration-300',
     ],
     attributes: {},
 };

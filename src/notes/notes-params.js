@@ -18,7 +18,15 @@ const listParams = {
 const noteContainerParams = {
     tagName: 'li',
     text: '',
-    classList: ['border-2', 'border-cyan-600', 'rounded-md', 'px-3', 'py-2'],
+    classList: [
+        'border-2',
+        'border-cyan-600',
+        'dark:border-white',
+        'duration-300',
+        'rounded-md',
+        'px-3',
+        'py-2',
+    ],
     attributes: {
         'data-item': '',
     },
@@ -34,7 +42,13 @@ const noteHeaderParams = {
 const noteTitleParams = {
     tagName: 'h6',
     text: '',
-    classList: ['text-cyan-600', 'font-medium', 'text-xl'],
+    classList: [
+        'text-cyan-600',
+        'dark:text-white',
+        'font-medium',
+        'text-xl',
+        'duration-300',
+    ],
     attributes: {},
 };
 
@@ -55,6 +69,7 @@ const favoriteButtonParams = {
         'h-6',
         'bg-no-repeat',
         'bg-center',
+        'duration-300',
     ],
     attributes: {},
 };
@@ -69,6 +84,7 @@ const favoriteButtonGoldParams = {
         'h-6',
         'bg-no-repeat',
         'bg-center',
+        'duration-300',
     ],
     attributes: {},
 };
@@ -83,6 +99,7 @@ const editButtonParams = {
         'h-6',
         'bg-no-repeat',
         'bg-center',
+        'duration-300',
     ],
     attributes: {},
 };
@@ -97,6 +114,7 @@ const removeButtonParams = {
         'h-6',
         'bg-no-repeat',
         'bg-center',
+        'duration-300',
     ],
     attributes: {
         'data-action': 'remove',
@@ -106,7 +124,7 @@ const removeButtonParams = {
 const noteTextParams = {
     tagName: 'p',
     text: '',
-    classList: [],
+    classList: ['dark:text-white', 'duration-300'],
     attributes: {},
 };
 
