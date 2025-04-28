@@ -90,7 +90,21 @@ const deleteNote = (id) => {
     }
 };
 
-const allNotes = initData();
-export { dataHandler, allNotes, deleteNote };
+const findNote = (id) => {
+    if (id) {
+        const isFavoriteId = id.endsWith('favorite');
+        const currentArray = isFavoriteId
+            ? allNotes.favorite
+            : allNotes.regular;
 
-// начать делать изм заметки
+        const currentIndex = currentArray.findIndex((note) => note.id === id);
+
+        let objectNote = currentArray[currentIndex];
+        return objectNote;
+    }
+};
+
+const allNotes = initData();
+export { dataHandler, allNotes, deleteNote, findNote };
+
+// удалить дубляжи из findNote, removeNote

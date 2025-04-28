@@ -50,7 +50,9 @@ const noteTitleParams = {
         'text-xl',
         'duration-300',
     ],
-    attributes: {},
+    attributes: {
+        value: '',
+    },
 };
 
 const buttonsContainerParams = {
@@ -102,7 +104,9 @@ const editButtonParams = {
         'bg-center',
         'duration-300',
     ],
-    attributes: {},
+    attributes: {
+        'data-action': 'edit',
+    },
 };
 
 const removeButtonParams = {

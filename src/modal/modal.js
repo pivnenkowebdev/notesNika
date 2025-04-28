@@ -15,23 +15,50 @@ import {
     textInputParams,
 } from './modal-params.js';
 
-const showForm = () => {
+const showForm = (status = false, objectNote = {}) => {
     const isForm = document.querySelector('#form');
 
     if (!isForm) {
         const appContainer = document.body;
-
         const fadeElem = creator(fadeParams);
         const formElem = creator(formParams);
         const headerFormElem = creator(headerFormParams);
+
+        if (objectNote.title) {
+            textInputParams.attributes.value = objectNote.title;
+        } else {
+            delete textInputParams.attributes.value;
+        }
+
         const textInputElem = creator(textInputParams);
+
+        if (objectNote.textarea) {
+            textAreaParams.text = objectNote.textarea;
+        } else {
+            delete textAreaParams.text;
+        }
+
         const textAreaElem = creator(textAreaParams);
+
         const btnContainerElem = creator(btnContainerParams);
         const canselBtnElem = creator(canselBtnParams);
+
+        if (status) {
+            addBtnParams.text = 'Edit';
+        } else {
+            addBtnParams.text = 'Add';
+        }
         const addBtnElem = creator(addBtnParams);
 
         const labelElem = creator(labelParams);
+
+        if (objectNote.checkbox) {
+            checkboxParams.attributes.checked = objectNote.checkbox;
+        } else {
+            delete checkboxParams.attributes.checked;
+        }
         const checkboxElem = creator(checkboxParams);
+
         const fakeCheckboxElem = creator(fakeCheckboxParams);
 
         appContainer.append(fadeElem);
@@ -61,7 +88,7 @@ const showForm = () => {
 
 const remove = (event, formElem, fadeElem) => {
     const isCancelBtn = event.target.closest('[data-reset]');
-    console.log(formElem, fadeElem);
+    // console.log(formElem, fadeElem);
     if (isCancelBtn) {
         deleteElem(formElem);
         deleteElem(fadeElem);

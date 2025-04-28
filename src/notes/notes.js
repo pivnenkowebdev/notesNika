@@ -1,5 +1,10 @@
 import creator from '../main-helpers/creator.js';
-import { deleteNote, allNotes } from '../main-helpers/data-handler.js';
+import {
+    deleteNote,
+    allNotes,
+    findNote,
+} from '../main-helpers/data-handler.js';
+import { showForm } from '../modal/modal.js';
 import {
     buttonsContainerParams,
     dateParams,
@@ -88,7 +93,7 @@ const eventDispatchNote = (event) => {
         currentId = actionBtn.closest('[data-item]').id;
         currentAction = actionBtn.dataset.action;
     }
-
+    const status = true;
     switch (currentAction) {
         case 'remove':
             deleteNote(currentId);
@@ -96,8 +101,8 @@ const eventDispatchNote = (event) => {
             displayNotes(allNotes.favorite);
             displayNotes(allNotes.regular);
             break;
-
-        default:
+        case 'edit':
+            showForm(status, findNote(currentId));
             break;
     }
 };
