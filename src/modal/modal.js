@@ -17,46 +17,42 @@ import {
 
 const showForm = (status = false, objectNote = {}) => {
     const isForm = document.querySelector('#form');
-
     if (!isForm) {
         const appContainer = document.body;
         const fadeElem = creator(fadeParams);
+
+        objectNote.id
+            ? (formParams.attributes['data-note'] = objectNote.id)
+            : delete formParams.attributes['data-note'];
+
         const formElem = creator(formParams);
         const headerFormElem = creator(headerFormParams);
 
-        if (objectNote.title) {
-            textInputParams.attributes.value = objectNote.title;
-        } else {
-            delete textInputParams.attributes.value;
-        }
+        objectNote.title
+            ? (textInputParams.attributes.value = objectNote.title)
+            : delete textInputParams.attributes.value;
 
         const textInputElem = creator(textInputParams);
 
-        if (objectNote.textarea) {
-            textAreaParams.text = objectNote.textarea;
-        } else {
-            delete textAreaParams.text;
-        }
+        objectNote.textarea
+            ? (textAreaParams.text = objectNote.textarea)
+            : delete textAreaParams.text;
 
         const textAreaElem = creator(textAreaParams);
 
         const btnContainerElem = creator(btnContainerParams);
         const canselBtnElem = creator(canselBtnParams);
 
-        if (status) {
-            addBtnParams.text = 'Edit';
-        } else {
-            addBtnParams.text = 'Add';
-        }
+        status ? (addBtnParams.text = 'Edit') : (addBtnParams.text = 'Add');
+
         const addBtnElem = creator(addBtnParams);
 
         const labelElem = creator(labelParams);
 
-        if (objectNote.checkbox) {
-            checkboxParams.attributes.checked = objectNote.checkbox;
-        } else {
-            delete checkboxParams.attributes.checked;
-        }
+        objectNote.checkbox
+            ? (checkboxParams.attributes.checked = objectNote.checkbox)
+            : delete checkboxParams.attributes.checked;
+
         const checkboxElem = creator(checkboxParams);
 
         const fakeCheckboxElem = creator(fakeCheckboxParams);
@@ -88,7 +84,6 @@ const showForm = (status = false, objectNote = {}) => {
 
 const remove = (event, formElem, fadeElem) => {
     const isCancelBtn = event.target.closest('[data-reset]');
-    // console.log(formElem, fadeElem);
     if (isCancelBtn) {
         deleteElem(formElem);
         deleteElem(fadeElem);
@@ -98,8 +93,9 @@ const remove = (event, formElem, fadeElem) => {
 const formHandler = (event) => {
     event.preventDefault();
     const dataFromForm = new FormData(event.target);
-    dataHandler(dataFromForm);
+    dataFromForm.append('oldId', event.target.dataset.note);
 
+    dataHandler(dataFromForm);
     clearNotes();
     displayNotes(allNotes.favorite);
     displayNotes(allNotes.regular);
