@@ -53,7 +53,9 @@ const displayNotes = (arrayNotes) => {
 
         const wrapperDateAndButton = creator(wrapperDateAndButtonParams);
         const date = creator(dateParams);
-        date.innerText = `Created ${note.date.currentDate} at ${note.date.currentTime}`;
+
+        const status = note.isEdit ? 'Changed' : 'Created';
+        date.innerText = `${status} ${note.date.currentDate} at ${note.date.currentTime}`;
         const buttonsContainer = creator(buttonsContainerParams);
         let favoriteButton = note.checkbox
             ? creator(favoriteButtonGoldParams)

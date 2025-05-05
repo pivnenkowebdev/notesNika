@@ -36,20 +36,17 @@ const dataHandler = (dataFromForm) => {
         title: dataFromForm.get('title'),
         checkbox: dataFromForm.get('checkbox'),
         textarea: dataFromForm.get('textarea'),
-        date: setDate(),
-        id: setID(dataFromForm.get('checkbox')),
+        isEdit: null,
     };
     const oldId = dataFromForm.get('oldId');
     if (oldId) {
         editNotes(oldId, newNote);
     }
+    newNote.date = setDate();
+    newNote.id = setID(dataFromForm.get('checkbox'));
     dataToArray(newNote);
     dataToLocalStorage(keyLocal, dataToJSON(allNotes));
 };
-// 1  создать функцию editNotes
-// 2 находить старую заметку 'findNote'
-// 3 проводить сравнение старой и новой заметки
-// 4 если хотя бы одно поле изм - старую заметку удалить а новую добавить
 
 const editNotes = (oldId, newNote) => {
     const oldNote = findNote(oldId);
@@ -58,7 +55,8 @@ const editNotes = (oldId, newNote) => {
         const isCheckboxChanged = newNote.checkbox !== oldNote.checkbox;
         const isTextAreaChanged = newNote.textarea !== oldNote.textarea;
         if (isTitleChanged || isCheckboxChanged || isTextAreaChanged) {
-            console.log('заметка изм');
+            deleteNote(oldId);
+            newNote.isEdit = true;
         }
     }
 };
