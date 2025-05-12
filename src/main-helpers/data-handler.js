@@ -61,6 +61,19 @@ const editNotes = (oldId, newNote) => {
     }
 };
 
+const changeStatus = (oldId) => {
+    const oldNote = findNote(oldId);
+    oldNote.isEdit = true;
+
+    oldNote.checkbox ? (oldNote.checkbox = null) : (oldNote.checkbox = 'on');
+
+    deleteNote(oldId);
+    oldNote.date = setDate();
+    oldNote.id = setID(oldNote.checkbox);
+    dataToArray(oldNote);
+    dataToLocalStorage(keyLocal, dataToJSON(allNotes));
+};
+
 const dataToArray = (objectNote) => {
     objectNote.checkbox
         ? allNotes.favorite.push(objectNote)
@@ -123,6 +136,6 @@ const findNote = (id) => {
 };
 
 const allNotes = initData();
-export { dataHandler, allNotes, deleteNote, findNote };
+export { dataHandler, allNotes, deleteNote, findNote, changeStatus };
 
-// удалить дубляжи из findNote, removeNote
+// удалить дубляжи из findNote, removeNote, changeStatus, editNote

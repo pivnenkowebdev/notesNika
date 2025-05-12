@@ -3,6 +3,7 @@ import {
     deleteNote,
     allNotes,
     findNote,
+    changeStatus,
 } from '../main-helpers/data-handler.js';
 import { showForm } from '../modal/modal.js';
 import {
@@ -100,7 +101,10 @@ const eventDispatchNote = (event) => {
             showForm(status, findNote(currentId));
             break;
         case 'status':
-        // 1 написать функцию change status
+            changeStatus(currentId);
+            clearNotes();
+            displayNotes(allNotes.favorite);
+            displayNotes(allNotes.regular);
     }
 };
 
