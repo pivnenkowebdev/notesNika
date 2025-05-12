@@ -74,7 +74,9 @@ const favoriteButtonParams = {
         'bg-center',
         'duration-300',
     ],
-    attributes: {},
+    attributes: {
+        'data-action': 'status',
+    },
 };
 
 const favoriteButtonGoldParams = {
@@ -89,7 +91,9 @@ const favoriteButtonGoldParams = {
         'bg-center',
         'duration-300',
     ],
-    attributes: {},
+    attributes: {
+        'data-action': 'status',
+    },
 };
 
 const editButtonParams = {

@@ -44,11 +44,8 @@ const displayNotes = (arrayNotes) => {
         const noteContainer = creator(noteContainerParams);
         const noteHeader = creator(noteHeaderParams);
 
-        if (note.title) {
-            noteTitleParams.text = note.title;
-        } else {
-            noteTitleParams.text = '';
-        }
+        noteTitleParams.text = note.title ? note.title : '';
+
         const noteTitle = creator(noteTitleParams);
 
         const wrapperDateAndButton = creator(wrapperDateAndButtonParams);
@@ -64,11 +61,7 @@ const displayNotes = (arrayNotes) => {
         const editButton = creator(editButtonParams);
         const removeButton = creator(removeButtonParams);
 
-        if (note.textarea) {
-            noteTextParams.text = note.textarea;
-        } else {
-            noteTextParams.textarea = '';
-        }
+        noteTextParams.text = note.textarea ? note.textarea : '';
         const noteText = creator(noteTextParams);
 
         noteContainer.append(noteHeader);
@@ -106,6 +99,8 @@ const eventDispatchNote = (event) => {
         case 'edit':
             showForm(status, findNote(currentId));
             break;
+        case 'status':
+        // 1 написать функцию change status
     }
 };
 
