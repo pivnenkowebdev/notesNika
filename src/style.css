@@ -55,3 +55,7 @@ body {
     background: #fcfcfc;
     cursor: pointer;
 }
+
+.open {
+    width: 234px;
+}

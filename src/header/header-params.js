@@ -62,4 +62,17 @@ const imgParams = {
     ],
 };
 
-export { headerParams, titleParams, btnNightModeParams, imgParams };
+const wrapperHeaderParams = {
+    tagName: 'div',
+    text: '',
+    classList: [],
+    attributes: {},
+};
+
+export {
+    headerParams,
+    titleParams,
+    btnNightModeParams,
+    imgParams,
+    wrapperHeaderParams,
+};
