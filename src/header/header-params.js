@@ -65,7 +65,7 @@ const imgParams = {
 const wrapperHeaderParams = {
     tagName: 'div',
     text: '',
-    classList: [],
+    classList: ['flex', 'gap-4'],
     attributes: {},
 };
 

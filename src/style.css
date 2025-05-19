@@ -56,6 +56,14 @@ body {
     cursor: pointer;
 }
 
-.open {
+.form-search.open .wrapper-input {
     width: 234px;
+}
+
+.form-search.open .search-button {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.form-search.open .icon-search {
+    transform: scale(1.2);
 }

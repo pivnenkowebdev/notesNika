@@ -22,7 +22,18 @@ const search = () => {
     formSearchElement.append(buttonSearchElement);
     buttonSearchElement.append(iconButtonSearchElement);
 
+    formSearchElement.addEventListener('click', (event) => searchOpen(event));
     return formSearchElement;
+};
+
+const searchOpen = (event) => {
+    const isBtn = event.target.closest('#searchButton');
+    if (isBtn) {
+        const isForm = isBtn.closest('#formSearch');
+        if (isForm) {
+            isForm.classList.toggle('open');
+        }
+    }
 };
 
 export { search };

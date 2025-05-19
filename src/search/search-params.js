@@ -16,14 +16,17 @@ const wrapperInputParams = {
         'w-0',
         'overflow-hidden',
         'duration-500',
+        'wrapper-input',
     ],
     attributes: {},
 };
 
 const formSearchParams = {
     tagName: 'div',
-    classList: ['h-10', 'w-10', 'relative'],
-    attributes: {},
+    classList: ['h-10', 'w-10', 'relative', 'form-search'],
+    attributes: {
+        id: 'formSearch',
+    },
 };
 
 const buttonSearchParams = {
@@ -43,8 +46,11 @@ const buttonSearchParams = {
         'left-[50%]',
         'translate-x-[-50%]',
         'translate-y-[-50%]',
+        'search-button',
     ],
-    attributes: {},
+    attributes: {
+        id: 'searchButton',
+    },
 };
 
 const iconButtonSearchParams = {
@@ -58,6 +64,7 @@ const iconButtonSearchParams = {
         'bg-center',
         'duration-300',
         'bg-cover',
+        'icon-search',
     ],
     attributes: {},
 };
