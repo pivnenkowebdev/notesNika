@@ -52,6 +52,7 @@ const noteTitleParams = {
     ],
     attributes: {
         value: '',
+        'data-note-header': '',
     },
 };
 
@@ -134,7 +135,9 @@ const noteTextParams = {
     tagName: 'p',
     text: '',
     classList: ['dark:text-white', 'duration-300'],
-    attributes: {},
+    attributes: {
+        'data-note-text': '',
+    },
 };
 
 const wrapperDateAndButtonParams = {
