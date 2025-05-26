@@ -22,7 +22,6 @@ const noteContainerParams = {
     classList: [
         'border-2',
         'border-cyan-600',
-        'dark:border-white',
         'duration-300',
         'rounded-md',
         'px-3',
@@ -134,7 +133,7 @@ const removeButtonParams = {
 const noteTextParams = {
     tagName: 'p',
     text: '',
-    classList: ['dark:text-white', 'duration-300'],
+    classList: ['dark:text-slate-400', 'duration-300'],
     attributes: {
         'data-note-text': '',
     },

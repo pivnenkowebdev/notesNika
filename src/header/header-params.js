@@ -4,7 +4,6 @@ const headerParams = {
     classList: [
         'border-b-2',
         'border-cyan-600',
-        'dark:border-white',
         'duration-300',
         'py-4',
         'px-2',
@@ -43,6 +42,8 @@ const btnNightModeParams = {
         'justify-center',
         'items-center',
         'duration-300',
+        'border-2',
+        'border-cyan-600',
     ],
     attributes: {},
 };
@@ -51,14 +52,17 @@ const imgParams = {
     tagName: 'span',
     text: '',
     classList: [
-        'h-8',
-        'w-8',
+        'h-6',
+        'w-6',
+        'dark:h-8',
+        'dark:w-8',
         'block',
         'bg-no-repeat',
         'bg-center',
         "bg-[url('/sun-icon.svg')]",
         "dark:bg-[url('/moon.svg')]",
         'duration-300',
+        'bg-cover',
     ],
 };
 

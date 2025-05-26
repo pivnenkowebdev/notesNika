@@ -1,6 +1,14 @@
 const inputSearchParams = {
     tagName: 'input',
-    classList: ['border-cyan-600', 'border-2', 'rounded-lg', 'pl-2', 'pr-6'],
+    classList: [
+        'border-cyan-600',
+        'border-2',
+        'rounded-lg',
+        'pl-2',
+        'pr-8',
+        'max-w-[234px]',
+        'outline-none',
+    ],
     attributes: {},
 };
 
@@ -47,6 +55,8 @@ const buttonSearchParams = {
         'translate-x-[-50%]',
         'translate-y-[-50%]',
         'search-button',
+        'border-2',
+        'border-cyan-600',
     ],
     attributes: {
         id: 'searchButton',
@@ -57,6 +67,7 @@ const iconButtonSearchParams = {
     tagName: 'span',
     classList: [
         "bg-[url('/search.svg')]",
+        "dark:bg-[url('/search-night.svg')]",
         'h-8',
         'w-8',
         'block',
