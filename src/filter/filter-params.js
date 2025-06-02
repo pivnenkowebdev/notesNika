@@ -16,7 +16,9 @@ const allBtnParams = {
         'text-cyan-600',
         'dark:text-white',
     ],
-    attributes: {},
+    attributes: {
+        'data-action': 'all',
+    },
 };
 
 const favoriteBtnParams = {
@@ -31,7 +33,9 @@ const favoriteBtnParams = {
         'text-cyan-600',
         'dark:text-white',
     ],
-    attributes: {},
+    attributes: {
+        'data-action': 'favorite',
+    },
 };
 
 export { wrapperFilterParams, allBtnParams, favoriteBtnParams };
