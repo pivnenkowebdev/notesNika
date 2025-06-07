@@ -16,6 +16,7 @@ const filter = () => {
 
     wrapperFilterElement.addEventListener('click', (event) => {
         filterDispatch(event);
+        setStyle(event);
     });
 
     return wrapperFilterElement;
@@ -42,8 +43,17 @@ const filterDispatch = (event) => {
     }
 };
 
-export default filter;
+const setStyle = (event) => {
+    const parent = event.currentTarget;
+    const buttons = parent.querySelectorAll('[data-action]');
+    const isBtn = event.target.closest('[data-action]');
 
-// 1. прослушать клик на контейнере +
-// 2. убедиться что клик произошел на кнопке
-// 3. обработать клик на кнопке
+    buttons.forEach((btn) => {
+        btn.classList.remove('text-white', 'bg-cyan-600');
+        btn.classList.add('text-cyan-600');
+    });
+    isBtn.classList.add('bg-cyan-600', 'text-white');
+    console.log(event.target);
+};
+
+export default filter;

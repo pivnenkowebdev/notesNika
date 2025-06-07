@@ -13,8 +13,9 @@ const allBtnParams = {
         'rounded-lg',
         'py-2',
         'px-2',
-        'text-cyan-600',
+        'text-white',
         'dark:text-white',
+        'bg-cyan-600',
     ],
     attributes: {
         'data-action': 'all',
