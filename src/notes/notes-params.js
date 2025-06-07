@@ -35,7 +35,7 @@ const noteContainerParams = {
 const noteHeaderParams = {
     tagName: 'div',
     text: '',
-    classList: ['flex', 'justify-between', 'items-center'],
+    classList: ['flex', 'flex-wrap', 'justify-between', 'items-center'],
     attributes: {},
 };
 
@@ -48,6 +48,7 @@ const noteTitleParams = {
         'font-medium',
         'text-xl',
         'duration-300',
+        'min-w-[200px]',
     ],
     attributes: {
         value: '',
@@ -142,14 +143,22 @@ const noteTextParams = {
 const wrapperDateAndButtonParams = {
     tagName: 'div',
     text: '',
-    classList: ['flex', 'gap-4', 'items-center'],
+    classList: [
+        'w-full',
+        'mobile:w-fit',
+        'flex',
+        'gap-4',
+        'items-center',
+        'justify-between',
+        'mobile:justify-start',
+    ],
     attributes: {},
 };
 
 const dateParams = {
     tagName: 'span',
     text: '',
-    classList: ['text-slate-400'],
+    classList: ['text-slate-400', 'min-w-[215px]'],
     attributes: {},
 };
 
